@@ -14,7 +14,7 @@ const DICT = {
     logos_lbl: 'Founders y equipos de ventas que ya cosechan con SALVIA',
     acr_tag: 'Qué es SALVIA',
     acr_h2a: 'Un sistema, no una herramienta.', acr_h2em: 'Operado por nosotros', acr_h2b: ', entregado llave en mano.',
-    acr_sub: 'SALVIA significa Sistema de Automatización de Leads y Ventas con Inteligencia Artificial. Seis piezas que normalmente viven en seis herramientas distintas, unificadas en una sola operación que nosotros orquestamos por ti.',
+    acr_sub: 'Seis piezas integradas en una sola operación que gestionamos por ti — sin que toques una herramienta.',
     l_S: 'Sistema', l_S_ex: 'Infraestructura completa que sustituye a 6 herramientas y 2 contrataciones.',
     l_A1: 'Automatización', l_A1_ex: 'Nosotros operamos el motor 24/7. Tú no configuras, no mantienes, no debuggeas.',
     l_L: 'Leads', l_L_ex: 'Prospectos cualificados con poder de decisión y fit verificado, no contactos fríos.',
@@ -30,6 +30,7 @@ const DICT = {
     p2_h: 'Listas compradas que son basura', p2_p: 'Apollo, ZoomInfo, Lusha. Contactos desactualizados, hard bounces, CEOs que llevan 3 años fuera de la empresa. Quemas dominio y reputación.',
     p3_h: 'Secuencias con olor a plantilla', p3_p: '"Hola {first_name}, vi que {company} está creciendo…" Los compradores B2B las detectan en dos segundos y las archivan en uno.',
     p4_h: 'Pipeline impredecible', p4_p: 'Un mes 12 demos, el siguiente 2. El forecast es una plegaria. Las board calls duelen.',
+    p5_h: 'Reporting que no te ayuda a mejorar', p5_p: 'Sabes cuántos emails salieron, no por qué funcionaron. Sin señal real, el siguiente trimestre repite los mismos errores.',
     ac_tag: 'Con SALVIA', ac_h: 'Pipeline predecible, como un cultivo: lento los primeros días, inevitable después.',
     ac_p: 'Investigamos cada cuenta como un SDR senior —sus rondas, sus señales, sus cambios de equipo— y solo entonces abrimos la conversación. Uno a uno. Nunca a mil.',
     st1_v: '72h', st1_l: 'del onboarding al primer lead cualificado',
@@ -83,7 +84,7 @@ const DICT = {
     logos_lbl: 'Founders and sales teams already harvesting with SALVIA',
     acr_tag: 'What is SALVIA',
     acr_h2a: 'A system, not a tool.', acr_h2em: 'Operated by us', acr_h2b: ', delivered turnkey.',
-    acr_sub: 'SALVIA stands for Sales Automation and Lead Generation with Artificial Intelligence. Six components that normally live in six different tools, unified in a single operation we orchestrate for you.',
+    acr_sub: 'Six components unified in a single operation we manage for you — without you touching a single tool.',
     l_S: 'System', l_S_ex: 'Complete infrastructure replacing 6 tools and 2 hires.',
     l_A1: 'Automation', l_A1_ex: "We run the engine 24/7. You don't configure, maintain, or debug anything.",
     l_L: 'Leads', l_L_ex: 'Qualified prospects with decision power and verified fit — not cold contacts.',
@@ -99,6 +100,7 @@ const DICT = {
     p2_h: 'Purchased lists that are garbage', p2_p: 'Apollo, ZoomInfo, Lusha. Stale contacts, hard bounces, CEOs who left 3 years ago. You burn domain and reputation.',
     p3_h: 'Sequences that smell like templates', p3_p: '"Hi {first_name}, I noticed {company} is growing…" B2B buyers spot them in two seconds and archive them in one.',
     p4_h: 'Unpredictable pipeline', p4_p: '12 demos one month, 2 the next. Forecasting is a prayer. Board calls hurt.',
+    p5_h: 'Reporting that never helps you improve', p5_p: "You know how many emails went out, not why they worked. Without real signal, next quarter repeats the same mistakes.",
     ac_tag: 'With SALVIA', ac_h: 'Predictable pipeline, like a crop: slow the first days, inevitable after.',
     ac_p: 'We research every account like a senior SDR — their rounds, their signals, their team changes — and only then open the conversation. One by one. Never a thousand at once.',
     st1_v: '72h', st1_l: 'from onboarding to first qualified lead',
@@ -376,7 +378,10 @@ export default function SalviaPage() {
     .sv-logos { padding: 60px 0 40px; border-top: 1px solid var(--sv-line); margin-top: 84px; }
     .sv-logos .sv-lbl { color: var(--sv-muted); font-size: 12.5px; text-align: center; margin-bottom: 36px; letter-spacing: 0.02em; }
     .sv-logo-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 40px; align-items: center; opacity: .7; }
-    .sv-logo-grid > div { height: 32px; display: flex; align-items: center; justify-content: center; color: var(--sv-ink-soft); font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: 17px; letter-spacing: -0.01em; }
+    .sv-logo-grid > div { height: 36px; display: flex; align-items: center; justify-content: center; color: var(--sv-ink-soft); font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: 17px; letter-spacing: -0.01em; }
+    .sv-logo-item { display: flex; align-items: center; justify-content: center; }
+    .sv-logo-item svg { opacity: .6; transition: opacity .2s; }
+    .sv-logo-item:hover svg { opacity: .9; }
     .sv-acronym { --surface: #F1F0EA; --surface-soft: rgba(241,240,234,0.72); --surface-muted: rgba(241,240,234,0.50); padding: 120px 0; border-top: 1px solid var(--sv-line); background: var(--sv-ink); color: var(--surface); position: relative; overflow: hidden; }
     .sv-dark .sv-acronym { background: oklch(0.12 0.04 142); }
     .sv-acronym::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 60% 80% at 90% 10%, color-mix(in oklab, var(--sv-accent) 25%, transparent), transparent 70%), radial-gradient(ellipse 50% 70% at 10% 90%, color-mix(in oklab, var(--sv-accent-deep) 40%, transparent), transparent 70%); opacity: .55; }
@@ -448,6 +453,9 @@ export default function SalviaPage() {
     .sv-step-vis .sv-line b { color: var(--sv-ink); font-weight: 500; }
     .sv-step-vis .sv-bar-viz { display: flex; gap: 3px; align-items: flex-end; height: 40px; margin-top: 4px; }
     .sv-step-vis .sv-bar-viz i { flex: 1; background: var(--sv-accent); border-radius: 2px 2px 0 0; opacity: .85; }
+    .sv-hero-top-img { margin-top: 52px; border-radius: var(--sv-radius-lg); overflow: hidden; border: 1px solid var(--sv-line); aspect-ratio: 21/9; position: relative; background: var(--sv-bg-alt); }
+    .sv-hero-top-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .sv-hero-vis-intro { margin-top: 72px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--sv-line); }
     .sv-hero-image { margin-top: 40px; border-radius: var(--sv-radius-lg); overflow: hidden; border: 1px solid var(--sv-line); aspect-ratio: 16/7; position: relative; background: var(--sv-bg-alt); }
     .sv-hero-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .sv-process-visual { margin-top: 56px; border: 1px solid var(--sv-line); border-radius: var(--sv-radius-lg); overflow: hidden; background: var(--sv-bg); }
@@ -637,7 +645,26 @@ export default function SalviaPage() {
               <span><CheckIcon /> {t('meta3')}</span>
             </div>
 
+            {/* HERO IMAGE — wide atmospheric */}
+            <div className="sv-hero-top-img">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/salvia/hero-top.jpg" alt="Barcelona desde el aire — escala y ambición" />
+            </div>
+
             {/* HERO VISUAL */}
+            <div className="sv-hero-vis-intro">
+              <span className="sv-mono" style={{ color: 'var(--sv-accent-deep)' }}>— {lang === 'es' ? 'campo de cultivo activo' : 'active growing field'}</span>
+              <h3 className="sv-display" style={{ fontSize: 'clamp(22px,2.4vw,32px)', margin: '10px 0 6px', letterSpacing: '-0.02em', fontWeight: 500 }}>
+                {lang === 'es'
+                  ? 'Hemos construido nuestra propia infraestructura de captación. Una sola vista, cero herramientas que integrar.'
+                  : 'We built our own lead capture infrastructure. One single view, zero tools to integrate.'}
+              </h3>
+              <p style={{ color: 'var(--sv-muted)', fontSize: 15, margin: 0, maxWidth: '68ch' }}>
+                {lang === 'es'
+                  ? 'Este es el panel que ven nuestros clientes. No el tuyo — no tienes que aprender nada. Nosotros lo operamos, tú ves resultados.'
+                  : "This is the dashboard our clients see. Not yours — you don't have to learn anything. We operate it, you see results."}
+              </p>
+            </div>
             <div className="sv-hero-visual">
               <div className="sv-hv-head">
                 <div className="sv-hv-dots"><i /><i /><i /></div>
@@ -691,7 +718,48 @@ export default function SalviaPage() {
             <div className="sv-logos">
               <div className="sv-lbl">{t('logos_lbl')}</div>
               <div className="sv-logo-grid">
-                {['Kova', 'Fernet', 'Lienzo', 'Junco', 'Nido\u00a0Labs', 'Raíz'].map(n => <div key={n}>{n}</div>)}
+                {/* Artiverse — caso real */}
+                <div className="sv-logo-item">
+                  <svg viewBox="0 0 160 44" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ height: 28, width: 'auto' }} aria-label="Artiverse">
+                    <polygon points="14,36 28,8 42,36" fill="#1A56DB" opacity=".9"/>
+                    <polygon points="28,8 42,36 56,36" fill="#C9F200" opacity=".9"/>
+                    <text x="64" y="31" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700" fontSize="22" fill="currentColor" letterSpacing="-0.5">artiverse</text>
+                  </svg>
+                </div>
+                {/* logos inventados */}
+                <div className="sv-logo-item">
+                  <svg viewBox="0 0 100 32" fill="none" style={{ height: 24, width: 'auto' }}>
+                    <rect x="0" y="4" width="24" height="24" rx="6" fill="var(--sv-ink)" opacity=".85"/>
+                    <text x="4" y="21" fontFamily="system-ui" fontWeight="700" fontSize="14" fill="white">K</text>
+                    <text x="30" y="22" fontFamily="system-ui, sans-serif" fontWeight="600" fontSize="17" fill="currentColor" letterSpacing="-0.4">Kova</text>
+                  </svg>
+                </div>
+                <div className="sv-logo-item">
+                  <svg viewBox="0 0 120 32" fill="none" style={{ height: 24, width: 'auto' }}>
+                    <circle cx="12" cy="16" r="11" fill="none" stroke="currentColor" strokeWidth="2" opacity=".7"/>
+                    <circle cx="12" cy="16" r="5" fill="currentColor" opacity=".7"/>
+                    <text x="30" y="22" fontFamily="system-ui, sans-serif" fontWeight="600" fontSize="17" fill="currentColor" letterSpacing="-0.4">Lienzo</text>
+                  </svg>
+                </div>
+                <div className="sv-logo-item">
+                  <svg viewBox="0 0 120 32" fill="none" style={{ height: 24, width: 'auto' }}>
+                    <path d="M4 26 L14 6 L24 26" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" opacity=".75" fill="none"/>
+                    <text x="32" y="22" fontFamily="system-ui, sans-serif" fontWeight="600" fontSize="17" fill="currentColor" letterSpacing="-0.4">Fernet</text>
+                  </svg>
+                </div>
+                <div className="sv-logo-item">
+                  <svg viewBox="0 0 120 32" fill="none" style={{ height: 24, width: 'auto' }}>
+                    <path d="M6 22 Q16 4 26 22" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" fill="none" opacity=".75"/>
+                    <text x="34" y="22" fontFamily="system-ui, sans-serif" fontWeight="600" fontSize="17" fill="currentColor" letterSpacing="-0.4">Nido</text>
+                  </svg>
+                </div>
+                <div className="sv-logo-item">
+                  <svg viewBox="0 0 120 32" fill="none" style={{ height: 24, width: 'auto' }}>
+                    <rect x="3" y="6" width="20" height="20" rx="10" fill="none" stroke="currentColor" strokeWidth="2" opacity=".7"/>
+                    <path d="M11 16 L15 20 L21 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity=".7"/>
+                    <text x="30" y="22" fontFamily="system-ui, sans-serif" fontWeight="600" fontSize="17" fill="currentColor" letterSpacing="-0.4">Raíz</text>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -739,50 +807,7 @@ export default function SalviaPage() {
           </div>
         </section>
 
-        {/* PROBLEMA */}
-        <section className="sv-block" id="problema">
-          <div className="sv-container">
-            <div className="sv-sec-tag">{t('prob_tag')}</div>
-            <h2 className="sv-display sv-sec-title">{t('prob_h')}</h2>
-            <p className="sv-sec-sub">{t('prob_sub')}</p>
-            <div className="sv-problem-grid">
-              <div>
-                {([
-                  { hk: 'p1_h', pk: 'p1_p', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg> },
-                  { hk: 'p2_h', pk: 'p2_p', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16v6H4zM4 14h16v6H4z" /></svg> },
-                  { hk: 'p3_h', pk: 'p3_p', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4" /></svg> },
-                  { hk: 'p4_h', pk: 'p4_p', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20V10" /><path d="M5 20V4" /><path d="M19 20v-7" /></svg> },
-                ] as { hk: DictKey; pk: DictKey; icon: React.ReactNode }[]).map(({ hk, pk, icon }) => (
-                  <div key={hk} className="sv-bf-row">
-                    <div className="sv-bf-ic">{icon}</div>
-                    <div>
-                      <h4>{t(hk)}</h4>
-                      <p>{t(pk)}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <aside className="sv-after-card">
-                <svg className="sv-leaf-deco" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round">
-                  <path d="M100 180c-40-10-70-40-70-90 0-20 10-40 20-50 10 20 30 30 50 30 0 40-10 70 0 110z" fill="currentColor" fillOpacity=".5" />
-                  <path d="M100 180c0-40 0-80 0-110" />
-                  <path d="M100 110l-20-15M100 140l-25-10M100 90l-15-20" />
-                </svg>
-                <span className="sv-mono-tag">{t('ac_tag')}</span>
-                <h3>{t('ac_h')}</h3>
-                <p>{t('ac_p')}</p>
-                <div className="sv-stat-row">
-                  <div className="sv-stat"><b>{t('st1_v')}</b><span>{t('st1_l')}</span></div>
-                  <div className="sv-stat"><b>{t('st2_v')}</b><span>{t('st2_l')}</span></div>
-                  <div className="sv-stat"><b>{t('st3_v')}</b><span>{t('st3_l')}</span></div>
-                  <div className="sv-stat"><b>{t('st4_v')}</b><span>{t('st4_l')}</span></div>
-                </div>
-              </aside>
-            </div>
-          </div>
-        </section>
-
-        {/* CÓMO FUNCIONA */}
+        {/* CÓMO FUNCIONA — Sembrar·Germinar·Cosechar, debajo del banner SALVIA */}
         <section className="sv-block" id="como">
           <div className="sv-container">
             <div className="sv-how-head">
@@ -889,6 +914,50 @@ export default function SalviaPage() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* PROBLEMA */}
+        <section className="sv-block" id="problema">
+          <div className="sv-container">
+            <div className="sv-sec-tag">{t('prob_tag')}</div>
+            <h2 className="sv-display sv-sec-title">{t('prob_h')}</h2>
+            <p className="sv-sec-sub">{t('prob_sub')}</p>
+            <div className="sv-problem-grid">
+              <div>
+                {([
+                  { hk: 'p1_h', pk: 'p1_p', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg> },
+                  { hk: 'p2_h', pk: 'p2_p', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16v6H4zM4 14h16v6H4z" /></svg> },
+                  { hk: 'p3_h', pk: 'p3_p', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4" /></svg> },
+                  { hk: 'p4_h', pk: 'p4_p', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20V10" /><path d="M5 20V4" /><path d="M19 20v-7" /></svg> },
+                  { hk: 'p5_h', pk: 'p5_p', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3h18v18H3z" /><path d="M3 9h18M9 21V9" /></svg> },
+                ] as { hk: DictKey; pk: DictKey; icon: React.ReactNode }[]).map(({ hk, pk, icon }) => (
+                  <div key={hk} className="sv-bf-row">
+                    <div className="sv-bf-ic">{icon}</div>
+                    <div>
+                      <h4>{t(hk)}</h4>
+                      <p>{t(pk)}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <aside className="sv-after-card">
+                <svg className="sv-leaf-deco" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round">
+                  <path d="M100 180c-40-10-70-40-70-90 0-20 10-40 20-50 10 20 30 30 50 30 0 40-10 70 0 110z" fill="currentColor" fillOpacity=".5" />
+                  <path d="M100 180c0-40 0-80 0-110" />
+                  <path d="M100 110l-20-15M100 140l-25-10M100 90l-15-20" />
+                </svg>
+                <span className="sv-mono-tag">{t('ac_tag')}</span>
+                <h3>{t('ac_h')}</h3>
+                <p>{t('ac_p')}</p>
+                <div className="sv-stat-row">
+                  <div className="sv-stat"><b>{t('st1_v')}</b><span>{t('st1_l')}</span></div>
+                  <div className="sv-stat"><b>{t('st2_v')}</b><span>{t('st2_l')}</span></div>
+                  <div className="sv-stat"><b>{t('st3_v')}</b><span>{t('st3_l')}</span></div>
+                  <div className="sv-stat"><b>{t('st4_v')}</b><span>{t('st4_l')}</span></div>
+                </div>
+              </aside>
             </div>
           </div>
         </section>
