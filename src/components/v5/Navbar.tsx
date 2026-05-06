@@ -229,6 +229,63 @@ export default function Navbar() {
                   );
                 })}
 
+                {/* Divider + Web Express (oferta comercial) */}
+                <div style={{
+                  height: '1px',
+                  background: '#E8E8E5',
+                  margin: '4px 10px 6px',
+                }} />
+                <Link
+                  href="/web-express"
+                  onClick={() => setLabsOpen(false)}
+                  style={{ textDecoration: 'none', display: 'block' }}
+                >
+                  <div
+                    className="dropdown-lab-item"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      padding: '8px 10px',
+                      borderRadius: '7px',
+                      transition: 'background 150ms ease',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    <span style={{ fontSize: '13px', lineHeight: 1.2 }}>
+                      <span style={{
+                        fontFamily: "var(--v5-font-advercase, 'Playfair Display', Georgia, serif)",
+                        fontWeight: 400,
+                        fontStyle: 'normal',
+                        color: '#111111',
+                        letterSpacing: '-0.01em',
+                      }}>
+                        Web
+                      </span>
+                      <span style={{
+                        fontFamily: 'var(--v5-font-body)',
+                        fontWeight: 300,
+                        color: 'rgba(0,0,0,0.35)',
+                      }}>
+                        {' Express'}
+                      </span>
+                    </span>
+                    <span style={{
+                      fontFamily: 'var(--v5-font-mono)',
+                      fontSize: '9px',
+                      letterSpacing: '0.08em',
+                      textTransform: 'uppercase',
+                      background: '#111111',
+                      color: '#FFFFFF',
+                      padding: '3px 6px',
+                      borderRadius: '3px',
+                      fontWeight: 600,
+                    }}>
+                      499€
+                    </span>
+                  </div>
+                </Link>
+
                 {/* Divider + AI Team Lab */}
                 <div style={{
                   height: '1px',
@@ -408,6 +465,46 @@ export default function Navbar() {
             )}
           </Link>
         ))}
+        <Link
+          href="/web-express"
+          onClick={() => setMobileOpen(false)}
+          style={{
+            fontSize: '16px',
+            textDecoration: 'none',
+            padding: '11px 0',
+            borderBottom: '1px solid #E8E8E8',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+          }}
+        >
+          <span style={{
+            fontFamily: "var(--v5-font-advercase, 'Playfair Display', Georgia, serif)",
+            fontWeight: 400,
+            fontStyle: 'normal',
+            color: '#111',
+            letterSpacing: '-0.01em',
+          }}>
+            Web
+          </span>
+          <span style={{ fontFamily: 'var(--v5-font-body)', fontWeight: 300, color: '#888' }}>
+            Express
+          </span>
+          <span style={{
+            fontFamily: 'var(--v5-font-mono)',
+            fontSize: '9px',
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            background: '#111',
+            color: '#fff',
+            padding: '3px 6px',
+            borderRadius: '3px',
+            fontWeight: 600,
+          }}>
+            499€
+          </span>
+        </Link>
+
         <Link
           href="/systems-lab/sesion-de-claridad"
           onClick={() => setMobileOpen(false)}
